@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jogo das Bandeiras</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Exemplo: flag icons (opcional). Se usar, inclua o CSS da lib escolhida -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css"> -->
+</head>
+<body>
+  <header class="topbar">
+    <h1>Máquina de Jogo das Bandeiras</h1>
+    <div class="balance">
+      <span>Saldo:</span>
+      <strong id="saldo">10.00</strong>
+      <span>créditos</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="control-group">
+        <label for="bandeira"><strong>Bandeira escolhida:</strong></label>
+        <select id="bandeira"></select>
+      </div>
+
+      <div class="control-group">
+        <label for="aposta"><strong>Valor da aposta (mín. R$0,25):</strong></label>
+        <input type="number" id="aposta" step="0.25" min="0.25" value="0.25" />
+      </div>
+
+      <div class="control-group inline">
+        <label for="multiplicador"><strong>Multiplicador:</strong></label>
+        <select id="multiplicador">
+          <option value="4">x4 (padrão)</option>
+          <option value="6">x6</option>
+          <option value="8">x8</option>
+          <option value="10">x10</option>
+        </select>
+      </div>
+
+      <button id="btnApostar" class="primary">Apostar</button>
+      <button id="btnBonus" class="secondary">Rodada Bônus (x2 no ganho)</button>
+    </section>
+
+    <section class="display">
+      <div class="wheel" id="roleta">
+        <!-- Bandeira sorteada aparecerá aqui -->
+        <div class="flag-view" id="flagSorteada"></div>
+      </div>
+      <div class="result">
+        <p id="resultado">Escolha uma bandeira e faça sua aposta.</p>
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>Histórico</h2>
+      <ul id="historico"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Este é um jogo de entretenimento. Jogue com responsabilidade.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
